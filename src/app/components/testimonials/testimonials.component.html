@@ -1,0 +1,29 @@
+<div class="testimonials-container">
+  <div class="section-header">
+    <h2>What Our Clients Say</h2>
+    <p>Hear from industry professionals who have experienced our exceptional drilling services</p>
+  </div>
+
+  <div class="testimonials-grid">
+    <div *ngFor="let testimonial of testimonials" class="testimonial-card">
+      <div class="testimonial-header">
+        <div class="testimonial-image">
+          <img [src]="testimonial.image" [alt]="testimonial.name">
+        </div>
+        <div class="testimonial-info">
+          <h3>{{ testimonial.name }}</h3>
+          <p>{{ testimonial.position }} at {{ testimonial.company }}</p>
+        </div>
+      </div>
+      
+      <div class="testimonial-content">
+        <p class="quote">"{{ testimonial.quote }}"</p>
+        
+        <div class="rating">
+          <mat-icon *ngFor="let star of getStarArray(testimonial.rating)" class="star-icon">star</mat-icon>
+          <mat-icon *ngFor="let star of getStarArray(5 - testimonial.rating)" class="star-icon star-empty">star_border</mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

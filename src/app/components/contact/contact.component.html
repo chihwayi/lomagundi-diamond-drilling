@@ -1,0 +1,80 @@
+<div class="contact-container">
+  <div class="contact-header">
+    <h1>Contact Lomagundi Diamond Drilling</h1>
+    <p>A Subsidiary of Lomagundi Construction Services Ltd</p>
+  </div>
+
+  <div class="contact-content">
+    <div class="contact-info">
+      <h2>Get In Touch</h2>
+      <app-contact-info></app-contact-info>
+      
+      <div class="office-hours">
+        <h3>Office Hours</h3>
+        <p>Monday-Friday: 8am – 5pm</p>
+        <p>Saturday & Sunday: Closed</p>
+        <p>Field Operations: 24/7</p>
+      </div>
+
+      <div class="social-links">
+        <app-social-links></app-social-links>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h2>Send Us a Message</h2>
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Full Name</mat-label>
+            <input matInput formControlName="name" required>
+            <mat-error *ngIf="isFieldInvalid('name')">
+              <span *ngIf="f['name'].errors?.['required']">Name is required</span>
+              <span *ngIf="f['name'].errors?.['minlength']">Name must be at least 2 characters</span>
+              <span *ngIf="f['name'].errors?.['maxlength']">Name cannot exceed 50 characters</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Email Address</mat-label>
+            <input matInput formControlName="email" type="email" required>
+            <mat-error *ngIf="isFieldInvalid('email')">
+              <span *ngIf="f['email'].errors?.['required']">Email is required</span>
+              <span *ngIf="f['email'].errors?.['email']">Please enter a valid email</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Phone Number (Optional)</mat-label>
+            <input matInput formControlName="phone">
+            <mat-error *ngIf="isFieldInvalid('phone')">
+              Please enter a valid phone number
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Your Message</mat-label>
+            <textarea matInput formControlName="message" rows="5" required></textarea>
+            <mat-error *ngIf="isFieldInvalid('message')">
+              <span *ngIf="f['message'].errors?.['required']">Message is required</span>
+              <span *ngIf="f['message'].errors?.['minlength']">Message must be at least 10 characters</span>
+              <span *ngIf="f['message'].errors?.['maxlength']">Message cannot exceed 500 characters</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-actions">
+          <button mat-raised-button color="primary" type="submit" [disabled]="loading">
+            {{ loading ? 'Sending...' : 'Send Message' }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

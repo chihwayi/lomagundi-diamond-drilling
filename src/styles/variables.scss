@@ -1,0 +1,62 @@
+// Color Palette
+$primary: #1976D2;         // Deep Blue
+$primary-dark: #0D47A1;    // Darker Blue
+$accent: #FF5722;          // Vibrant Orange
+$light: #FFFFFF;           // White
+$dark: #333333;            // Dark Gray
+$gray-dark: #666666;       // Medium Gray
+$gray-medium: #999999;     // Light Gray
+$gray-lightest: #F5F5F5;   // Very Light Gray
+$gray-dark: #666666;       // Medium Gray
+$gray-medium: #999999;     // Light Gray
+$gray-lighter: #CCCCCC;    // Lighter Gray (ADD THIS)
+$gray-lightest: #F5F5F5;   // Very Light Gray
+
+// Typography
+$font-family-base: 'Roboto', sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.5;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+
+// Border Radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+
+// Shadows
+$box-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$box-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.15);
+$box-shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+// Transitions
+$transition-base: all 0.3s ease;
+
+// Breakpoints
+$breakpoint-xs: 576px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1400px;
+
+// Z-Index
+$zindex-dropdown: 1000;
+$zindex-sticky: 1020;
+$zindex-fixed: 1030;
+$zindex-modal-backdrop: 1040;
+$zindex-modal: 1050;
+$zindex-popover: 1060;
+$zindex-tooltip: 1070;
+
+// Grid
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+
+// Opacity
+$opacity-hover: 0.8;
+$opacity-disabled: 0.5;

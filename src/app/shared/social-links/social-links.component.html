@@ -1,0 +1,5 @@
+<div class="social-links" [ngClass]="{'inverse': inverse}">
+  <a *ngFor="let link of socialLinks" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
+    <mat-icon fontSet="fontawesome" fontIcon="fa-{{ link.icon }}"></mat-icon>
+  </a>
+</div>

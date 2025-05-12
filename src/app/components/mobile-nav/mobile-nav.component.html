@@ -1,0 +1,13 @@
+<div class="mobile-nav">
+  <div class="mobile-nav-items">
+    <div 
+      *ngFor="let item of navItems" 
+      class="mobile-nav-item" 
+      (click)="navigateTo(item.route)"
+      [class.active]="router.url === item.route"
+    >
+      <mat-icon>{{ item.icon }}</mat-icon>
+      <span>{{ item.label }}</span>
+    </div>
+  </div>
+</div>

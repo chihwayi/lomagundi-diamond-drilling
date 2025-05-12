@@ -1,0 +1,28 @@
+.logo-container {
+display: flex;
+align-items: center;
+a {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-decoration: none;
+}
+.logo-image {
+max-width: 200px;
+height: auto;
+}
+.tagline {
+font-size: 0.8rem;
+color: #666;
+margin-top: 10px;
+text-align: center;
+}
+&.footer-logo {
+.logo-image {
+max-width: 250px;
+}
+.tagline {
+  color: #fff;
+}
+}
+}

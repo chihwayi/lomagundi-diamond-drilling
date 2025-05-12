@@ -1,0 +1,70 @@
+<div class="services-page">
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-title">Our Diamond Drilling Services</h1>
+      <p class="page-subtitle">
+        Comprehensive diamond drilling solutions tailored to meet your specific project requirements
+      </p>
+    </div>
+  </section>
+
+  <section class="services-grid">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4" *ngFor="let service of services">
+          <mat-card class="service-card" (click)="openServiceDetails(service)">
+            <div class="service-icon">
+              <mat-icon>{{ service.icon }}</mat-icon>
+            </div>
+            <img mat-card-image [src]="service.image" [alt]="service.title">
+            <mat-card-content>
+              <h3 class="service-title">{{ service.title }}</h3>
+              <p class="service-description">{{ service.description }}</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button color="primary">View Details</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Details Modal -->
+  <mat-dialog-content *ngIf="selectedService" class="service-details-modal">
+    <div class="service-details-content">
+      <button mat-icon-button class="close-button" (click)="closeServiceDetails()">
+        <mat-icon>close</mat-icon>
+      </button>
+      
+      <div class="service-details-header">
+        <h2>{{ selectedService.title }}</h2>
+        <img [src]="selectedService.image" [alt]="selectedService.title">
+      </div>
+      
+      <div class="service-details-body">
+        <p class="service-description">{{ selectedService.description }}</p>
+        
+        <div class="service-highlights">
+          <h3>Key Highlights</h3>
+          <ul>
+            <li *ngFor="let highlight of selectedService.highlights">
+              <mat-icon>check_circle</mat-icon>
+              {{ highlight }}
+            </li>
+          </ul>
+        </div>
+        
+        <div class="service-applications">
+          <h3>Typical Applications</h3>
+          <ul>
+            <li *ngFor="let application of selectedService.applications">
+              <mat-icon>engineering</mat-icon>
+              {{ application }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+</div>

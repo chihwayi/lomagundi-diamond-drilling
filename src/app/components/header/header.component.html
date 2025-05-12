@@ -1,0 +1,39 @@
+<header class="header">
+  <mat-toolbar class="main-navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a routerLink="/" class="brand">
+          <app-logo></app-logo>
+          <div class="brand-text">
+            <h1>Lomagundi Diamond Drilling</h1>
+            <p class="subtitle">A member of Lomagundi Construction Services</p>
+          </div>
+        </a>
+        
+        <div class="nav-links d-none d-lg-flex">
+          <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+          <a mat-button routerLink="/about" routerLinkActive="active">About</a>
+          <a mat-button routerLink="/services" routerLinkActive="active">Services</a>
+          <a mat-button routerLink="/projects" routerLinkActive="active">Projects</a>
+          <a mat-button routerLink="/testimonials" routerLinkActive="active">Testimonials</a>
+          <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
+        </div>
+
+        <button mat-icon-button class="mobile-menu-toggle d-lg-none" (click)="toggleMobileNav()" aria-label="Open menu">
+          <mat-icon>menu</mat-icon>
+        </button>
+
+        <app-cta-button 
+          text="Get a Quote" 
+          link="/contact" 
+          color="accent" 
+          size="medium" 
+          [outlined]="false" 
+          icon="engineering"
+          class="d-none d-lg-block"></app-cta-button>
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <app-mobile-nav *ngIf="mobileNavOpen" (closeNav)="closeMobileNav()"></app-mobile-nav>
+</header>

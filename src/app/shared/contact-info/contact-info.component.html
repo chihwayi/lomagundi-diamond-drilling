@@ -1,0 +1,70 @@
+<!--
+<div class="contact-info" [ngClass]="{'vertical': vertical, 'inverse': inverse}">
+  <div class="contact-item">
+    <mat-icon *ngIf="showIcons">location_on</mat-icon>
+    <span>{{ contactInfo.address }}</span>
+  </div>
+  
+  <div class="contact-item">
+    <mat-icon *ngIf="showIcons">phone</mat-icon>
+    <span>Landline: {{ contactInfo.landline }}</span>
+  </div>
+  
+  <div class="contact-item">
+    <mat-icon *ngIf="showIcons">smartphone</mat-icon>
+    <span>Mobile: {{ contactInfo.mobile }}</span>
+  </div>
+  
+  <div class="contact-item">
+    <mat-icon *ngIf="showIcons">email</mat-icon>
+    <a href="mailto:{{ contactInfo.email }}">{{ contactInfo.email }}</a>
+  </div>
+  
+  <div class="contact-item">
+    <mat-icon *ngIf="showIcons">access_time</mat-icon>
+    <div class="hours">
+      <div>Office Hours:</div>
+      <div>{{ contactInfo.officeHours.weekdays }}</div>
+      <div>{{ contactInfo.officeHours.weekend }}</div>
+    </div>
+  </div>
+  
+  <div class="contact-item">
+    <mat-icon *ngIf="showIcons">engineering</mat-icon>
+    <div class="hours">
+      <div>Field Operations Hours: {{ contactInfo.fieldOperations }}</div>
+    </div>
+  </div>
+</div>
+-->
+<div class="contact-info" [ngClass]="{'vertical': vertical, 'inverse': inverse}">
+  <div class="contact-item" *ngIf="contactInfo.address">
+    <mat-icon *ngIf="showIcons">location_on</mat-icon>
+    <span>{{ contactInfo.address }}</span>
+  </div>
+  <div class="contact-item" *ngIf="contactInfo.landline">
+    <mat-icon *ngIf="showIcons">phone</mat-icon>
+    <span>Landline: {{ contactInfo.landline }}</span>
+  </div>
+  <div class="contact-item" *ngIf="contactInfo.mobile">
+    <mat-icon *ngIf="showIcons">smartphone</mat-icon>
+    <span>Mobile: {{ contactInfo.mobile }}</span>
+  </div>
+  <div class="contact-item" *ngIf="contactInfo.email">
+    <mat-icon *ngIf="showIcons">email</mat-icon>
+    <a href="mailto:{{ contactInfo.email }}">{{ contactInfo.email }}</a>
+  </div>
+  <div class="contact-item" *ngIf="contactInfo.officeHours">
+    <mat-icon *ngIf="showIcons">access_time</mat-icon>
+    <div class="hours">
+      <div>Office Hours:</div>
+      <div>{{ contactInfo.officeHours.weekdays }}</div>
+      <div>{{ contactInfo.officeHours.weekend }}</div>
+    </div>
+  </div>
+  <div class="contact-item" *ngIf="contactInfo.fieldOperations">
+    <mat-icon *ngIf="showIcons">engineering</mat-icon>
+    <div class="hours">
+      <div>Field Operations Hours: {{ contactInfo.fieldOperations }}</div>
+    </div>
+  </div>

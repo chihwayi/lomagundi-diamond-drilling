@@ -1,0 +1,65 @@
+<div class="about-container">
+  <section class="company-overview">
+    <div class="overview-content">
+      <h1>About Lomagundi Diamond Drilling</h1>
+      <p class="subsidiary-note">A Specialized Subsidiary of Lomagundi Construction Services</p>
+      
+      <div class="overview-details">
+        <div class="detail-block">
+          <h3>Our Story</h3>
+          <p>Founded in {{ companyOverview.founded }}, Lomagundi Diamond Drilling has been at the forefront of precision drilling technologies.</p>
+        </div>
+        
+        <div class="detail-block">
+          <h3>Company Description</h3>
+          <p>{{ companyOverview.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mission-vision">
+    <div class="mission-content">
+      <div class="mission-block">
+        <h2>Our Mission</h2>
+        <p>{{ companyOverview.mission }}</p>
+      </div>
+      
+      <div class="vision-block">
+        <h2>Our Vision</h2>
+        <p>{{ companyOverview.vision }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <h2>Our Leadership Team</h2>
+    <div class="team-grid">
+      <div *ngFor="let member of teamMembers" class="team-member">
+        <div class="member-image">
+          <img [src]="member.image" [alt]="member.name">
+        </div>
+        <div class="member-details">
+          <h3>{{ member.name }}</h3>
+          <p class="position">{{ member.position }}</p>
+          <p class="bio">{{ member.bio }}</p>
+          <div class="social-links" *ngIf="member.linkedin">
+            <a [href]="member.linkedin" target="_blank" rel="noopener noreferrer">
+              <mat-icon>link</mat-icon> LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="milestones-section">
+    <h2>Our Journey</h2>
+    <div class="milestones-timeline">
+      <div *ngFor="let milestone of milestones" class="milestone">
+        <div class="milestone-year">{{ milestone.year }}</div>
+        <div class="milestone-event">{{ milestone.event }}</div>
+      </div>
+    </div>
+  </section>
+</div>

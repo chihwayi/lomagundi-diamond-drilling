@@ -1,0 +1,122 @@
+@import '../../../styles/variables';
+
+.footer {
+  background-color: $primary-dark;
+  color: $light;
+  padding: 60px 0 30px;
+
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .footer-section {
+    flex: 1;
+    margin-bottom: 30px;
+    min-width: 250px;
+    padding-right: 30px;
+
+    &.company-info {
+      max-width: 350px;
+    }
+
+    h4 {
+      color: $light;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      position: relative;
+      padding-bottom: 10px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background-color: $accent;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 10px;
+
+        a {
+          color: rgba($light, 0.7);
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $light;
+          }
+        }
+      }
+    }
+
+    .contact-details {
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+
+        mat-icon {
+          margin-right: 10px;
+          color: $accent;
+        }
+
+        span {
+          color: rgba($light, 0.8);
+        }
+      }
+    }
+
+    .company-description {
+      font-size: 0.9rem;
+      color: rgba($light, 0.7);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+  }
+
+  .footer-bottom {
+    background-color: darken($primary-dark, 5%);
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid rgba($light, 0.1);
+
+    .copyright {
+      font-size: 0.9rem;
+      color: rgba($light, 0.6);
+
+      a {
+        color: $accent;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: lighten($accent, 10%);
+        }
+      }
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+    }
+
+    .footer-section {
+      padding-right: 0;
+      margin-bottom: 30px;
+      width: 100%;
+    }
+  }
+}

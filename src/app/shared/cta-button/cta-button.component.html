@@ -1,0 +1,26 @@
+<!--
+<button 
+  mat-button
+  [color]="color"
+  [routerLink]="link"
+  [ngClass]="{
+    'btn-lg': size === 'large',
+    'btn-sm': size === 'small',
+    'btn-outline': outlined
+  }"
+  class="cta-button">
+  <mat-icon *ngIf="icon">{{icon}}</mat-icon>
+  {{text}}
+</button>
+-->
+<button 
+      mat-raised-button 
+      color="accent" 
+      [routerLink]="link" 
+      [class.full-width]="fullWidth"
+      [class.outlined]="outlined"
+      class="cta-button"
+    >
+      <mat-icon *ngIf="icon">{{ icon }}</mat-icon>
+      {{ buttonText }}
+    </button>

@@ -1,0 +1,116 @@
+@import '../../../styles/variables';
+
+.projects-page {
+  .page-header {
+    background-color: $primary-dark;
+    color: $light;
+    padding: 100px 0 60px;
+    text-align: center;
+    
+    .page-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: $light;
+    }
+    
+    .page-subtitle {
+      font-size: 1.2rem;
+      color: rgba($light, 0.8);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  }
+  
+  .projects-filter-section {
+    background-color: $gray-lightest;
+    padding: 30px 0;
+    
+    .category-filter {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      
+      button {
+        margin: 5px;
+        text-transform: capitalize;
+        
+        &.mat-primary {
+          background-color: $primary;
+          color: $light;
+        }
+      }
+    }
+  }
+  
+  .projects-grid {
+    padding: 60px 0;
+    background-color: $light;
+    
+    .project-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: $box-shadow-lg;
+      }
+      
+      mat-card-image {
+        height: 250px;
+        object-fit: cover;
+      }
+      
+      .project-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: $primary-dark;
+      }
+      
+      .project-category {
+        color: $accent;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+      
+      .project-description {
+        color: $gray-dark;
+        flex-grow: 1;
+      }
+      
+      mat-card-actions {
+        justify-content: center;
+        padding: 15px;
+      }
+    }
+  }
+  
+  // Responsive Adjustments
+  @media (max-width: $breakpoint-md) {
+    .page-header {
+      .page-title {
+        font-size: 2.5rem;
+      }
+      
+      .page-subtitle {
+        font-size: 1rem;
+      }
+    }
+    
+    .projects-filter-section {
+      .category-filter {
+        gap: 10px;
+        
+        button {
+          padding: 8px 15px;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,154 @@
+@import '../../../styles/variables';
+
+.main-footer {
+  background-color: $primary-dark;
+  color: $light;
+  padding: 0;
+
+  .footer-top {
+    padding: 60px 0 40px;
+    position: relative;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(to right, $accent, $primary);
+    }
+  }
+  
+  .footer-widget {
+    margin-bottom: 30px;
+    
+    .widget-title {
+      color: $light;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 25px;
+      position: relative;
+      padding-bottom: 10px;
+      
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background-color: $accent;
+      }
+    }
+  }
+  
+  .company-tagline {
+    margin: 15px 0;
+    font-style: italic;
+    color: $gray-lighter;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      margin-bottom: 10px;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        padding-left: 5px;
+      }
+      
+      a {
+        color: $gray-lighter;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: relative;
+        
+        &:before {
+          content: '›';
+          position: absolute;
+          left: -15px;
+          top: 0;
+          opacity: 0;
+          transition: all 0.3s ease;
+        }
+        
+        &:hover {
+          color: $accent;
+          
+          &:before {
+            opacity: 1;
+            left: -10px;
+          }
+        }
+      }
+    }
+  }
+  
+  .newsletter-form {
+    margin-top: 20px;
+    
+    ::ng-deep {
+      .mat-form-field-wrapper {
+        padding-bottom: 0;
+      }
+      
+      .mat-form-field-outline {
+        color: rgba(255, 255, 255, 0.3);
+      }
+      
+      .mat-input-element {
+        color: $light;
+      }
+      
+      .mat-form-field-label {
+        color: rgba(255, 255, 255, 0.6);
+      }
+    }
+  }
+  
+  .footer-bottom {
+    background-color: darken($primary-dark, 5%);
+    padding: 20px 0;
+    font-size: 14px;
+    
+    .copyright {
+      margin-bottom: 0;
+    }
+    
+    .terms-privacy {
+      margin-bottom: 0;
+      
+      a {
+        color: $gray-lighter;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          color: $accent;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .main-footer {
+    .footer-top {
+      padding: 40px 0 20px;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      
+      .text-md-end {
+        text-align: center !important;
+        margin-top: 10px;
+      }
+    }
+  }
+}
