@@ -1,4 +1,5 @@
-@import '../../../styles/variables';
+@use '../../../styles/variables' as *;
+@use 'sass:color';
 
 .hero-section {
   position: relative;
@@ -452,7 +453,7 @@
   }
 
   .footer-bottom {
-    background-color: darken($primary-dark, 5%);
+    background-color: color.adjust($primary-dark, $lightness: -5%);
     padding: 20px 0;
     text-align: center;
     border-top: 1px solid rgba($light, 0.1);
@@ -467,7 +468,7 @@
         transition: color 0.3s ease;
 
         &:hover {
-          color: lighten($accent, 10%);
+          color: color.adjust($accent, $lightness: 10%);
         }
       }
     }
