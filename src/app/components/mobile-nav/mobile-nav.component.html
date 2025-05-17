@@ -1,4 +1,11 @@
-<div class="mobile-nav">
+
+<div class="mobile-nav-backdrop" (click)="closeNav.emit()"></div>
+<div class="mobile-nav" [class.open]="isOpen">
+  <div class="mobile-nav-header">
+    <button mat-icon-button (click)="closeNav.emit()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
   <div class="mobile-nav-items">
     <div 
       *ngFor="let item of navItems" 

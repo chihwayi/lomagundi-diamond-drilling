@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { trigger, transition, style, animate, state } from '@angular/animations';
 
 @Component({
@@ -21,26 +22,26 @@ import { trigger, transition, style, animate, state } from '@angular/animations'
     ])
   ]
 })
-export class HomepageComponent implements OnInit {
+export class HomepageComponent implements OnInit, AfterViewInit {
   
   services = [
     {
       title: 'Diamond Drilling',
       description: 'Precision diamond drilling services for various applications including wet core drilling.',
       icon: 'build',
-      image: '/assets/images/services/diamond-drilling.jpg'
+      image: '/assets/images/services/core-drilling1.jpg'
     },
     {
       title: 'Diamond Sawing',
       description: 'Clean and accurate cutting of concrete and other materials with our diamond sawing equipment.',
       icon: 'content_cut',
-      image: '/assets/images/services/diamond-sawing.jpg'
+      image: '/assets/images/services/diamond-sawing.png'
     },
     {
       title: 'Core Drilling',
       description: 'Professional core drilling services for residential, commercial, and industrial projects.',
       icon: 'sync',
-      image: '/assets/images/services/core-drilling.jpg'
+      image: '/assets/images/services/core-drilling1.jpg'
     },
     {
       title: 'Wire Sawing',
@@ -78,19 +79,19 @@ export class HomepageComponent implements OnInit {
       name: 'John Smith',
       position: 'Project Manager, ABC Construction',
       quote: 'Lomagundi Diamond Drilling delivered exceptional service on our commercial renovation project. Their precision and professionalism were outstanding.',
-      image: '/assets/images/testimonials/client1.jpg'
+      image: '/assets/images/clients/john.png'
     },
     {
       name: 'Sarah Johnson',
       position: 'Director, XYZ Engineering',
       quote: 'We\'ve worked with many drilling contractors, but Lomagundi stands out for their attention to detail and reliability. Highly recommended.',
-      image: '/assets/images/testimonials/client2.jpg'
+      image: '/assets/images/clients/sarah.png'
     },
     {
       name: 'Michael Brown',
       position: 'Site Manager, DEF Developments',
       quote: 'The team at Lomagundi Diamond Drilling completed our complex project on time and within budget. Their expertise was invaluable.',
-      image: '/assets/images/testimonials/client3.jpg'
+      image: '/assets/images/clients/michael.png'
     }
   ];
 
@@ -99,19 +100,19 @@ export class HomepageComponent implements OnInit {
       title: 'Southampton City Center Renovation',
       category: 'Commercial',
       description: 'Diamond drilling and sawing services for major renovation project.',
-      image: '/assets/images/projects/project1.jpg'
+      image: '/assets/images/projects/3.jpg'
     },
     {
       title: 'Hampshire Industrial Complex',
       category: 'Industrial',
       description: 'Core drilling for new industrial facility installation.',
-      image: '/assets/images/projects/project2.jpg'
+      image: '/assets/images/projects/8.jpg'
     },
     {
       title: 'Portsmouth Residential Development',
       category: 'Residential',
       description: 'Various drilling services for new housing development.',
-      image: '/assets/images/projects/project3.jpg'
+      image: '/assets/images/projects/9.jpg'
     }
   ];
 
@@ -122,8 +123,23 @@ export class HomepageComponent implements OnInit {
     { value: 100, label: 'Satisfied Clients', icon: 'thumb_up' }
   ];
 
-  constructor() { }
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit() {
+    // Only execute DOM queries in the browser
+    if (isPlatformBrowser(this.platformId)) {
+      // Delay to ensure DOM is fully rendered
+      setTimeout(() => {
+        const links = document.querySelectorAll('[routerLink]');
+        console.log('Found', links.length, 'router links:');
+        links.forEach((link, index) => {
+          const routerLink = link.getAttribute('routerlink') || link.getAttribute('ng-reflect-router-link');
+          console.log(`${index + 1}. ${link.tagName} -> ${routerLink}`);
+        });
+      }, 1000);
+    }
   }
 }

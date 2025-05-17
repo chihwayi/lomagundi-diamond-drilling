@@ -13,14 +13,14 @@
   {{text}}
 </button>
 -->
-<button 
-      mat-raised-button 
-      color="accent" 
-      [routerLink]="link" 
-      [class.full-width]="fullWidth"
-      [class.outlined]="outlined"
-      class="cta-button"
-    >
-      <mat-icon *ngIf="icon">{{ icon }}</mat-icon>
-      {{ buttonText }}
-    </button>
+<a 
+  mat-raised-button 
+  [color]="color" 
+  [routerLink]="link" 
+  [class.full-width]="fullWidth"
+  [class.outlined]="outlined"
+  [ngClass]="'cta-button size-' + size"
+>
+  <mat-icon *ngIf="icon">{{ icon }}</mat-icon>
+  {{ displayText }}
+</a>

@@ -16,4 +16,8 @@ export class CtaButtonComponent {
   @Input() buttonText: string = ''; 
   @Input() fullWidth: boolean = false; 
 
+  // Getter to handle both buttonText and text inputs
+  get displayText(): string {
+    return this.buttonText || this.text;
+  }
 }

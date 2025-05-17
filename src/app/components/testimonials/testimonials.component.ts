@@ -25,7 +25,7 @@ export class TestimonialsComponent {
       position: 'Project Manager',
       company: 'Southampton City Construction',
       quote: 'Lomagundi Diamond Drilling provided exceptional precision and professionalism. Their core drilling work was instrumental in our hospital expansion project.',
-      image: '/assets/images/testimonials/john-richards.jpg',
+      image: '/assets/images/clients/john.png',
       rating: 5
     },
     {
@@ -34,7 +34,7 @@ export class TestimonialsComponent {
       position: 'Chief Geologist',
       company: 'Marine Research Institute',
       quote: 'The team\'s expertise in geological sampling is unmatched. Their advanced drilling techniques have significantly improved our research capabilities.',
-      image: '/assets/images/testimonials/sarah-thompson.jpg',
+      image: '/assets/images/clients/sarah.png',
       rating: 5
     },
     {
@@ -43,7 +43,7 @@ export class TestimonialsComponent {
       position: 'Site Director',
       company: 'National Infrastructure Projects',
       quote: 'Reliability and technical expertise define Lomagundi Diamond Drilling. They consistently deliver high-quality results under challenging conditions.',
-      image: '/assets/images/testimonials/michael-clarke.jpg',
+      image: '/assets/images/clients/michael.png',
       rating: 4
     }
   ];

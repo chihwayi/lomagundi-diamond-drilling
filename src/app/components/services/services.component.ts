@@ -24,7 +24,7 @@ export class ServicesComponent {
       title: 'Core Drilling',
       description: 'Precision diamond core drilling for geological sampling, structural investigation, and material testing.',
       icon: 'settings_suggest',
-      image: '/assets/images/services/core-drilling1.jpg',
+      image: '/assets/images/services/core-drilling2.jpg',
       highlights: [
         'Minimal site disturbance',
         'High-precision sampling',

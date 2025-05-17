@@ -1,94 +1,168 @@
 .contact-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 3rem 1.5rem;
+
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07);
 
   .contact-header {
     text-align: center;
-    margin-bottom: 2rem;
-    
+    margin-bottom: 3rem;
+
     h1 {
-      color: #333;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
+      color: #1a1a1a;
+      font-weight: 700;
       margin-bottom: 0.5rem;
     }
 
     p {
+      font-size: 1.1rem;
       color: #666;
-      font-size: 1rem;
     }
   }
 
   .contact-content {
     display: flex;
     gap: 2rem;
-    
+    flex-wrap: wrap;
+
     @media (max-width: 768px) {
       flex-direction: column;
     }
 
     .contact-info {
       flex: 1;
-      background-color: #f9f9f9;
-      padding: 1.5rem;
-      border-radius: 8px;
-      
+      background: #f1f6fa;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
       h2, h3 {
-        color: #333;
+        color: #0c2340;
+        font-weight: 600;
+      }
+
+      h2 {
+        font-size: 1.8rem;
         margin-bottom: 1rem;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+        margin-top: 1.5rem;
       }
 
       .office-hours {
         margin-top: 1.5rem;
-        
+
         p {
-          color: #666;
-          margin: 0.5rem 0;
+          color: #444;
+          margin: 0.4rem 0;
+          font-size: 0.95rem;
         }
       }
 
       .social-links {
-        margin-top: 1.5rem;
+        margin-top: 2rem;
+
+        app-social-links {
+          display: flex;
+          gap: 1rem;
+
+          a {
+            color: #0c2340;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+
+            &:hover {
+              color: #0077cc;
+            }
+          }
+        }
       }
     }
 
     .contact-form {
       flex: 1;
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
 
       h2 {
-        color: #333;
+        font-size: 1.8rem;
         margin-bottom: 1.5rem;
+        color: #0c2340;
+        font-weight: 600;
       }
 
       .form-group {
-        margin-bottom: 1rem;
+        margin-bottom: 1.2rem;
 
         mat-form-field {
           width: 100%;
+          font-size: 1rem;
+
+          .mat-form-field-outline {
+            color: #0077cc;
+          }
+
+          .mat-form-field-label {
+            font-size: 0.95rem;
+            font-weight: 500;
+          }
+
+          .mat-input-element {
+            font-size: 1rem;
+          }
+
+          mat-error {
+            font-size: 0.85rem;
+            color: #e53935;
+          }
         }
       }
 
       .form-actions {
         display: flex;
         justify-content: center;
-        margin-top: 1.5rem;
+        margin-top: 2rem;
 
         button {
           min-width: 200px;
-          padding: 0.75rem;
+          padding: 0.75rem 1.5rem;
+          font-size: 1rem;
+          border-radius: 30px;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #005fa3;
+          }
         }
       }
     }
   }
 }
 
-// Custom snackbar styles
+// Snackbars
 .success-snackbar {
   background-color: #4CAF50;
   color: white;
+  font-weight: 500;
+  font-size: 0.95rem;
 }
 
 .error-snackbar {
   background-color: #F44336;
   color: white;
+  font-weight: 500;
+  font-size: 0.95rem;
 }

@@ -35,7 +35,7 @@ export class AboutComponent {
       name: 'David Williams',
       position: 'Chief Executive Officer',
       bio: 'With 25 years of experience in construction and drilling technologies, David leads our strategic vision and ensures world-class service delivery.',
-      image: '/assets/images/team/david-williams.jpg',
+      image: '/assets/images/team/david.png',
       linkedin: 'https://www.linkedin.com/in/davidwilliams'
     },
     {
@@ -43,7 +43,7 @@ export class AboutComponent {
       name: 'Emma Richardson',
       position: 'Technical Operations Director',
       bio: 'A geological engineering expert with extensive experience in advanced drilling techniques and project management.',
-      image: '/assets/images/team/emma-richardson.jpg',
+      image: '/assets/images/team/emma.png',
       linkedin: 'https://www.linkedin.com/in/emmarichardson'
     },
     {
@@ -51,7 +51,7 @@ export class AboutComponent {
       name: 'Michael Thompson',
       position: 'Senior Drilling Engineer',
       bio: 'Specialized in complex geological drilling projects with a proven track record of innovative solutions.',
-      image: '/assets/images/team/michael-thompson.jpg',
+      image: '/assets/images/team/michael.png',
       linkedin: 'https://www.linkedin.com/in/michaelthompson'
     }
   ];
